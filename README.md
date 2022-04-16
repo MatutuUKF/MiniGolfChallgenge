@@ -1,0 +1,2 @@
+# MiniGolfChallgenge
+bachelor thesis
