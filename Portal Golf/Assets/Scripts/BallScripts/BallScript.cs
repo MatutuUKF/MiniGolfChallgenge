@@ -3,14 +3,15 @@ using UnityEngine;
 public class BallScript : MonoBehaviour
 {
 
-   
 
+    
     [SerializeField] float gravity;
     public bool turnOffBouncess = false;
 
 
+    
     private LineRenderer lr;
-    public Transform Pivot;
+    public Transform Pivot,StartPivot;
 
     Rigidbody rb;
 
@@ -20,8 +21,9 @@ public class BallScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         lr = GetComponent<LineRenderer>();
-        Pivot = transform.Find("Pivot");
+       
         rb = GetComponent<Rigidbody>();
        
         
@@ -36,7 +38,7 @@ public class BallScript : MonoBehaviour
 
         // Sipka, jej smer, rotacia (smer lopticky)
        // Pivot.transform.eulerAngles = new Vector3(0, PivotRotationY, 0);
-        lr.SetPosition(0, transform.position);
+        lr.SetPosition(0, StartPivot.position);
         lr.SetPosition(1, Pivot.position);
         
         
